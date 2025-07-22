@@ -8,9 +8,9 @@ from telegram.error import Forbidden
 # It's highly recommended to use an environment variable for your bot token for security.
 # On your deployment server (like Railway or Heroku), set an environment variable
 # called TELEGRAM_BOT_TOKEN with the token you get from BotFather.
-TOKEN = os.environ.get("7261504651:AAFomshxREz_pJRb5QFwOIe4JVIw-kfiHtk")
+TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
 if not TOKEN:
-    raise ValueError("No token found in environment variables. Please set it.")
+    raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables. Please set it.")
 
 INSTAGRAM_LINK = "https://www.instagram.com/david.behlarian"
 
