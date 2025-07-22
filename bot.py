@@ -10,7 +10,7 @@ from telegram.error import Forbidden
 # called TELEGRAM_BOT_TOKEN with the token you get from BotFather.
 TOKEN = os.environ.get("7261504651:AAFomshxREz_pJRb5QFwOIe4JVIw-kfiHtk")
 if not TOKEN:
-    raise ValueError("No TELEGRAM_BOT_TOKEN found in environment variables. Please set it.")
+    raise ValueError("No token found in environment variables. Please set it.")
 
 INSTAGRAM_LINK = "https://www.instagram.com/david.behlarian"
 
