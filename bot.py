@@ -36,7 +36,7 @@ async def send_verification_message(context: ContextTypes.DEFAULT_TYPE, user_id:
     reply_markup = InlineKeyboardMarkup(keyboard)
     await context.bot.send_message(
         chat_id=user_id,
-        text="Hi! Are you an applicant to the dental faculty?",
+        text="Привіт! Ти абітурієнт стоматологічного факультету?",
         reply_markup=reply_markup,
     )
     logger.info(f"Sent verification question to user {user_id} for chat {chat_id}.")
@@ -97,8 +97,8 @@ async def handle_button_press(update: Update, context: ContextTypes.DEFAULT_TYPE
             await context.bot.approve_chat_join_request(chat_id=chat_id, user_id=user_id)
             logger.info(f"Approved existing join request for user {user_id} in chat {chat_id}.")
             welcome_message = (
-                "Welcome to the chat! If you have any questions about your studies "
-                f"or related matters, write to me on Instagram: {INSTAGRAM_LINK}"
+                "Вітаю в чаті! Якщо у вас виникнуть питання з приводу навчання "
+                f"та похідного, пишіть мені у інстаграм.: {INSTAGRAM_LINK}"
             )
             await query.edit_message_text(text=welcome_message)
         except BadRequest as e:
@@ -134,8 +134,8 @@ async def handle_button_press(update: Update, context: ContextTypes.DEFAULT_TYPE
             await context.bot.decline_chat_join_request(chat_id=chat_id, user_id=user_id)
             logger.info(f"Declined join request for user {user_id} in chat {chat_id}.")
             rejection_message = (
-                "Unfortunately, your admission has not been approved. If you believe "
-                f"this is a mistake, contact me on Instagram: {INSTAGRAM_LINK}"
+                "На жаль ваш вступ не схвалено, якщо ви вважаєте "
+                f"що виникла якась помилка, звʼяжіться зі мною: {INSTAGRAM_LINK}"
             )
             await query.edit_message_text(text=rejection_message)
         except Exception as e:
